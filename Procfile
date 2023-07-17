@@ -1,1 +1,1 @@
-web: gunicorn recipesapp.wsgi --log-file -
+web: gunicorn recipe-app-2.wsgi --log-file -
