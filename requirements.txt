@@ -17,7 +17,7 @@ gunicorn==20.1.0
 ipython==8.13.2
 jedi==0.18.2
 kiwisolver==1.4.4
-matplotlib @ file:///C:/Users/joana/Documents/CareerFoundry/Python%20for%20Web%20Developers/A2_Bookstore_App/src/matplotlib-3.7.2-cp310-cp310-win_amd64.whl#sha256=23fb1750934e5f0128f9423db27c474aa32534cec21f7b2153262b066a581fd1
+matplotlib==3.7.2
 matplotlib-inline==0.1.6
 mysql-connector-python==8.0.33
 mysqlclient==2.1.1
