@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Recipe app</title>
+  <!-- <style>
+    body {
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      color: #d98025;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      padding: 5px 10px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 20px;
+    }
+
+    .grid-item {
+      display: block;
+      height: 200px;
+      background-size: cover;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .grid-item span {
+      display: block;
+      background: rgba(255, 255, 255, .8);
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    a {
+      color: #357b70;
+    }
+
+
+    /* img {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    } */
+  </style> -->
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/" class="logo">Recipe App</a></li>
+      <li><a href="/recipes/list">Recipes</a></li>
+      <li><a href="/recipes/search">Search</a></li>
+      <li><a href="https://joanafm81.github.io/portfolio-website/" target="_blank">About me</a></li>
+      <li><a href="/users/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <h1 class="header-one">Recipes</h1>
+
+  <div class="grid-container">
+    {% for object in object_list %}
+    <a class="grid-item" style="background-image: url({{object.pic.url}});" href="{{object.get_absolute_url}}">
+      <span>{{object.name}}</span>
+    </a>
+    {% endfor %}
+
+  </div>
+
+</body>
+
+</html>

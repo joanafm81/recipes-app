@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Recipe app</title>
+  <style>
+    /* body {
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      color: #d98025;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      padding: 5px 10px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 20px;
+    }
+
+    .grid-item {
+      display: block;
+      height: 200px;
+      background-size: cover;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .grid-item span {
+      display: block;
+      background: rgba(255, 255, 255, .8);
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    a {
+      color: #357b70;
+    }
+
+    table {
+      border: 0;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    td,
+    th {
+      border-bottom: 2px solid #ccc;
+      max-width: 250px;
+      width: auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    table img {
+      max-width: fit-content;
+      max-height: 100px;
+      width: auto;
+      height: auto;
+    }
+ */
+    button {
+      padding: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/" class="logo">Recipe App</a></li>
+      <li><a href="/recipes/list">Recipes</a></li>
+      <li><a href="/recipes/search">Search</a></li>
+      <li><a href="https://joanafm81.github.io/portfolio-website/" target="_blank">About me</a></li>
+      <li><a href="/users/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <h1 class="header-one"> Search for recipes </h1>
+
+  <hr>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Search</button>
+
+  </form>
+
+  {% if recipes_df %}
+  {{recipes_df|safe}}
+  <br>
+  <img src="data:image/png;base64, {{chart|safe}}">
+  {% else %}
+  <h3>no data</h3>
+  {% endif %}
+
+</body>
+
+</html>

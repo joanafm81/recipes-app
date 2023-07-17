@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>Recipe app</title>
+  <style>
+    html {
+      background-image: url({% static 'recipes/background-dark.webp' %});
+      background-size: cover;
+    }
+
+    body {
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: 700;
+      text-align: center;
+      color: #d98025;
+      display: inline-block;
+      background: rgba(255, 255, 255, .1);
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 26px;
+    }
+
+    header {
+      text-align: center;
+      color: #fff;
+      padding: 70px 40px 0 40px;
+    }
+
+    div {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .button {
+      border: none;
+      font-family: inherit;
+      background-color: #357b70;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 3px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .button:hover,
+    .button:focus {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Recipe App</h1>
+
+    <h3>Logout</h3>
+
+    <p>You’ve successfully logged out.</p>
+  </header>
+  <div>
+    <a href="/users/login" class="button">Login again</a>
+  </div>
+
+</body>
+
+</html>

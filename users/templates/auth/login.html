@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>Recipe app</title>
+  <style>
+    html {
+      background-image: url({% static 'recipes/background-dark.webp' %});
+      background-size: cover;
+    }
+
+    body {
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: 700;
+      text-align: center;
+      color: #d98025;
+      display: inline-block;
+      background: rgba(255, 255, 255, .1);
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 26px;
+    }
+
+    header {
+      text-align: center;
+      color: #fff;
+      /* background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=867&q=80); */
+
+      padding: 70px 40px 0 40px;
+    }
+
+
+    button {
+      border: none;
+      font-family: inherit;
+      background-color: #357b70;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 3px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover,
+    button:focus {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    .container {
+      background-color: white;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 12px 0px #666;
+    }
+
+    .container input,
+    .container button {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .container div {
+      margin-bottom: 20px;
+    }
+
+    .bottom-sheet {
+      padding: 20px;
+      text-align: center;
+
+      background-color: #ddd;
+      margin: 0 -20px -20px -20px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Recipe App</h1>
+
+    <h3>Login</h3> {% comment %} print heading {% endcomment %}
+
+  </header>
+
+
+
+  {% comment %} check for error message {% endcomment %}
+  {% if error_message %}
+  {{error_message}}
+  {% endif %}
+
+  {% comment %} print form {% endcomment %}
+  <form action="" method="POST">
+    <div class="container">
+      {% comment %} add Django security token {% endcomment %}
+      {% csrf_token %}
+
+      <div>
+        {% comment %} print form received from view {% endcomment %}
+        {{form}}
+      </div>
+
+      <div>
+        {% comment %} add button {% endcomment %}
+        <button type="submit">Login</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- <form>
+    <div class="container">
+      <div>
+        <input type="text" placeholder="username" required>
+      </div>
+
+      <div>
+        <input type="password" placeholder="password" required>
+      </div>
+
+      <div>
+        <button type="submit">Login</button>
+       
+  </div>
+
+  <div class="bottom-sheet">
+    <span>Not registered? <a href="#">Create an account.</a></span>
+  </div>
+  </div>
+  </form> -->
+
+
+</body>
+
+</html>
